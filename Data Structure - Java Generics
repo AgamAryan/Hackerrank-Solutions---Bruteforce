@@ -1,0 +1,13 @@
+public class Solution {
+    public static void main(String[] args) {
+        Integer[] intarr = {1,2,3};
+        String[] stringarr = {"Hello", "World"};
+        displayarr(intarr);
+        displayarr(stringarr);
+    }
+    public static <T> void displayarr(T[] arr){
+        for(T x : arr){
+            System.out.println(x);
+        }
+    }
+}
