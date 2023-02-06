@@ -1,0 +1,38 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str;
+        while (sc.hasNext()){
+            str=sc.next();
+            if(ispm(str)){
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            }
+        }
+    }
+    static boolean ispm(String s){
+        Stack<Character> st=new Stack<>();
+        for(int i=0; i<s.length(); i++){
+            char cr=s.charAt(i);
+            if(isOpening(cr)){
+                st.push(cr);
+            } else {
+                if(st.isEmpty()){
+                    return false;
+                } else if(!isMatching(st.peek(), cr)){
+                    return false;
+                } else {
+                    st.pop();
+                }
+            }
+        }
+        return st.isEmpty();
+    }
+    static boolean isOpening(char c){
+        return c=='(' || c=='{' || c=='[';
+    }
+    static boolean isMatching(char a, char b){
+        return (a=='(' && b==')') || (a=='{' && b=='}') || (a=='[' && b==']');
+    }
+}
