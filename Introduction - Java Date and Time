@@ -1,0 +1,90 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
+        while (month < 1 || month > 12) {
+            month = sc.nextInt();
+        }
+        int date = sc.nextInt();
+        while (date < 1 || date > 31) {
+            date = sc.nextInt();
+        }
+        int year = sc.nextInt();
+        while (year < 2001 || year > 2999) {
+            year = sc.nextInt();
+        }
+        //will be used for current going year
+        int xtradaysofmonths[] = {3,0,3,2,3,2,3,3,2,3,2,3};
+
+        //Starting date of 2001
+        //Monday, jan 1 2001
+        int d = 1;
+        int m = 1;
+        int y = 2001;
+        int totaldays, monthcount, yearcount, fewleftdays;
+
+        monthcount = (28 * (month - m));
+        yearcount = (365 * (year - y));
+
+        //day count section
+        int sum=0;
+        int n=month-1;
+        for(int j=0;j<n;j++){
+            sum+=xtradaysofmonths[j];
+        }
+
+        //leap year section
+        int leapdayscount=((year/4)-500);   //leap year's xtra day count
+
+        if(month==2 && date==29){
+            totaldays=(yearcount + monthcount + date + sum);
+
+            if(totaldays%7==1){
+                System.out.println("MONDAY");
+            }
+            else if(totaldays%7==2){
+                System.out.println("TUESDAY");
+            }
+            else if(totaldays%7==3){
+                System.out.println("WEDNESDAY");
+            }
+            else if(totaldays%7==4){
+                System.out.println("THURSDAY");
+            }
+            else if(totaldays%7==5){
+                System.out.println("FRIDAY");
+            }
+            else if(totaldays%7==6){
+                System.out.println("SATURDAY");
+            }
+            else if(totaldays%7==0){
+                System.out.println("SUNDAY");
+            }
+        }
+        else {
+            totaldays=(yearcount + monthcount + date + leapdayscount + sum);
+
+            if(totaldays%7==1){
+                System.out.println("MONDAY");
+            }
+            else if(totaldays%7==2){
+                System.out.println("TUESDAY");
+            }
+            else if(totaldays%7==3){
+                System.out.println("WEDNESDAY");
+            }
+            else if(totaldays%7==4){
+                System.out.println("THURSDAY");
+            }
+            else if(totaldays%7==5){
+                System.out.println("FRIDAY");
+            }
+            else if(totaldays%7==6){
+                System.out.println("SATURDAY");
+            }
+            else if(totaldays%7==0){
+                System.out.println("SUNDAY");
+            }
+        }
+    }
+}
