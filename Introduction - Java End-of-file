@@ -1,0 +1,10 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=1;
+        while(s.hasNext()){     // .hasNext() checks if we are in end of file or not 
+            System.out.println(n++ +" "+s.nextLine());      //n will increase by each line and content will get printed
+        }
+        s.close();      //always remenber to close it
+    }
+}
