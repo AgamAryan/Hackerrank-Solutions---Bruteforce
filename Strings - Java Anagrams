@@ -1,0 +1,36 @@
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        while (s1.length() < 1 || s1.length() >= 50) {
+            s1 = sc.next();
+        }
+        String s2 = sc.next();
+        while (s2.length() < 1 || s2.length() >= 50) {
+            s2 = sc.next();
+        }
+
+        //converting both strings in lowercase even if they are in Uowercase
+        s1=s1.toLowerCase();
+        s2=s2.toLowerCase();
+
+        //sorting the strings and storing into new string
+        char[] chars1 = s1.toCharArray();
+        Arrays.sort(chars1);
+        String sorted1 = new String(chars1);
+
+        char[] chars2 = s2.toCharArray();
+        Arrays.sort(chars2);
+        String sorted2 = new String(chars2);
+
+        //comparing both the strings
+        if(sorted1.equals(sorted2)){
+            System.out.println("Anagrams");
+        }
+        else{
+            System.out.println("Not Anagrams");
+        }
+        
+    }
+}
