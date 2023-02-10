@@ -1,0 +1,13 @@
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc=new Scanner(System.in);
+        BigInteger b= sc.nextBigInteger();
+        sc.close();
+        if(b.isProbablePrime(1)){
+            System.out.println("prime");
+        }
+        else{
+            System.out.println("not prime");
+        }
+    }
+}
