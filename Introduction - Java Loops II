@@ -1,3 +1,5 @@
+1st solution :
+
 class Solution{
     public static void main(String []argh){
         Scanner in = new Scanner(System.in);
@@ -14,5 +16,44 @@ class Solution{
                 System.out.println(); 
         }
         in.close();
+    }
+}
+
+
+2nd solution :
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int q = scanner.nextInt();
+        int a, b, n;
+        for (int i = 0; i < q; i++) {
+            a = scanner.nextInt();
+            b = scanner.nextInt();
+            n = scanner.nextInt();
+            int store = 0;
+            for (int j = 0; j < n; j++) {
+                int s;
+                s = power(2, j) * b;
+                System.out.print((a + store + s) + " ");
+                store = s + store;
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+        public static int power(int num, int power){
+        int s=0;
+        for (int i = 0; i < power; i++) {
+            s = 1;
+            for (int j = 0; j <= i; j++) {
+                s = num * s;
+            }
+        }
+        if(power==0){
+            return 1;
+        }else{
+            return s;
+        }
     }
 }
