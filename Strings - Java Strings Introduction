@@ -1,0 +1,58 @@
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        String a=sc.next();
+        String b=sc.next();
+        int a1=a.length();
+        int b1=b.length();
+
+        System.out.println(a1+b1);
+
+        if(a1 > b1){
+            for(int i=0; i<a1; i++){
+                if(a.charAt(i) <= b.charAt(i)){
+                    System.out.println("No");
+                    break;
+                }
+                else{
+                    System.out.println("Yes");
+                    break;
+                }
+            }
+        }
+        else if(a1<b1){
+            for(int i=0; i<b1; i++){
+                if(a.charAt(i) <= b.charAt(i)){
+                    System.out.println("No");
+                    break;
+                }
+                else{
+                    System.out.println("Yes");
+                    break;
+                }
+            }
+        }
+        else{
+            for(int i=0; i<a1; i++){
+                if(a.charAt(i) <= b.charAt(i)){
+                    System.out.println("No");
+                    break;
+                }
+                else{
+                    System.out.println("Yes");
+                    break;
+                }
+            }
+        }
+
+        char a2=a.toUpperCase().charAt(0);
+        String a3=a.substring(1);
+        char b2=b.toUpperCase().charAt(0);
+        String b3=b.substring(1);
+
+        System.out.println(a2+a3+" "+b2+b3);
+
+    }
+}
