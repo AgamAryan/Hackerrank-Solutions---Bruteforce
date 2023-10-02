@@ -53,6 +53,5 @@ public class Solution {
         String b3=b.substring(1);
 
         System.out.println(a2+a3+" "+b2+b3);
-
     }
 }
