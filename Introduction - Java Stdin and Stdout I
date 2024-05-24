@@ -12,6 +12,5 @@ public class Solution {
         System.out.println(myInt2);
         System.out.println(myInt3);
 
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
     }
 }
