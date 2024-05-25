@@ -1,15 +1,12 @@
 public class Solution {
     public static void main(String[] args) {
-        
-        Scanner myinput = new Scanner(System.in);
-        int num = myinput.nextInt();
-        double dub = myinput.nextDouble();
-        myinput.nextLine();
-        String info = myinput.nextLine();
-        
-        System.out.println("String: " + info);
-        System.out.println("Double: " + dub);
-        System.out.println("Int: " + num);
-    
+        Scanner scanner = new Scanner(System.in);
+        int myInt = scanner.nextInt();
+        double myDub = scanner.nextDouble();
+        scanner.nextLine();
+        String myStr = scanner.nextLine();
+        System.out.println("String: " + myStr);
+        System.out.println("Double: "+myDub);
+        System.out.println("Int: "+myInt);
     }
 }
