@@ -1,14 +1,62 @@
 public class Solution {
     public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        String totalSpace = "               ";
         System.out.println("================================");
-        for (int i=0;i<3;i++){
-            String s1 = sc.next();
-            int n1 = sc.nextInt();
-            System.out.printf("%-15s%03d\n" , s1, n1);
+        for(int i=0; i<3; i++){
+            String text = scanner.next();
+            while(text.length()>10){
+                text= scanner.next();
+            }
+            int leftSpace = totalSpace.length()-text.length();
+            int spaces = totalSpace.length()-leftSpace;
+            String neededSpaces = totalSpace.substring(spaces);
+            int n = scanner.nextInt();
+            while(n<0 || n>999){
+                n=scanner.nextInt();
+            }
+            String paddedNumber = String.format("%03d" , n);
+            System.out.println(text + neededSpaces + paddedNumber);
         }
         System.out.println("================================");
-    
+        scanner.close();
+    }
+}
+
+-or-
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String myStr;
+        int myInt;
+        int spaceCounter;
+        int digitCounter;
+        String zeroStr;
+        System.out.println("================================");
+        for(int i=0; i<3; i++) {
+            myStr = scanner.next();
+            while(myStr.length()>10) {
+                myStr=scanner.next();
+            }
+            spaceCounter=myStr.length();
+            for(int j=0; j<(15-spaceCounter); j++) {
+                myStr=myStr+" ";
+            }
+            myInt = scanner.nextInt();
+            while(myInt<0 || myInt>999) {
+                myInt = scanner.nextInt();
+            }
+            zeroStr=String.valueOf(myInt);
+            digitCounter=zeroStr.length();
+            if(zeroStr.length() != 3) {
+                for(int j=0; j<(3-digitCounter); j++) {
+                    zeroStr="0"+zeroStr;
+                }
+            }
+            System.out.println(myStr + zeroStr);
+        }
+        scanner.close();
+        System.out.println("================================");
     }
 }
