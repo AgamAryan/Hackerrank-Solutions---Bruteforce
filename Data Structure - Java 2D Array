@@ -1,0 +1,19 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int[][] twodarray=new int[6][6];
+        ArrayList<Integer> container=new ArrayList<>();
+        for(int i=0; i<6; i++) {
+            for(int j=0; j<6; j++) {
+                twodarray[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0; i<4; i++) {
+            for(int j=0; j<4; j++) {
+                container.add(twodarray[i][j]+twodarray[i][j+1]+twodarray[i][j+2]+twodarray[i+1][j+1]+twodarray[i+2][j]+twodarray[i+2][j+1]+twodarray[i+2][j+2]);
+            }
+        }
+        Collections.sort(container);
+        System.out.println(container.get(15));
+    }
+}
